@@ -82,8 +82,12 @@ sf_trees_unite <- sf_trees %>%
 
 ```{r}
 #recognizing data as spatial
+
 blackwood_acacia_sp <- blackwood_acacia %>% 
   drop_na(longitude, latitude) %>% 
+  drop_na(longitude, latitude) %>% 
+  drop_na(longitude, latitude) %>% 
+
   st_as_sf(coords = c("longitude", "latitude"))
 
 # does not have a set coordinate system, have to set it
@@ -104,7 +108,7 @@ ggplot(data = sf_map)+
   geom_sf()
 
 ```
-Combine blackwood acacia tree observerations and road map
+Combine blackwood acacia tree observations and road map
 
 ```{r}
 ggplot()+
